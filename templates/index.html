@@ -1,0 +1,294 @@
+
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js supports-no-cookies" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js supports-no-cookies" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#7db557">
+  <link rel="canonical" href="https://materialize-shopify-themes.myshopify.com/cart">
+
+  
+
+  
+  <title>
+    Profile Info | CodeItWithShakyo
+    
+    
+    
+      
+    
+  </title>
+
+  
+
+  
+<meta property="og:site_name" content="Materialize Shopify Themes">
+<meta property="og:url" content="https://materialize-shopify-themes.myshopify.com/cart">
+<meta property="og:title" content="Your Shopping Cart">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Materialize Shopify Themes">
+
+
+<meta name="twitter:site" content="@materializecss">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your Shopping Cart">
+<meta name="twitter:description" content="Materialize Shopify Themes">
+
+
+  
+    <link href="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/gallery-materialize.min.css?v=5949261343333427621" rel="stylesheet" type="text/css" media="all" />
+  
+  <link href="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.scss.css?v=13040590330786245977" rel="stylesheet" type="text/css" media="all" />
+
+  <!-- Lato Font -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  
+  
+
+  
+
+
+
+</head>
+<body id="your-shopping-cart" class="template-cart ">
+
+ 
+  <div id="shopify-section-header" class="shopify-section">
+
+
+<style>
+  
+
+  
+
+  
+</style>
+
+<!-- Navbar and Header -->
+
+<nav
+  class="nav-extended
+         
+         ">
+
+  
+    <div class="nav-background">
+      <div class="pattern active" style="background-image: url('https://images.unsplash.com/photo-1594904351111-a072f80b1a71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');"></div>
+    </div>
+  
+
+  <div class="nav-wrapper container">
+    <a href="/" itemprop="url" class="brand-logo site-logo">
+      <i class="material-icons left">home</i>
+        Home
+      
+    </a>
+
+    
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+
+      
+
+          <li >
+            <a href="/" class="site-nav__link">Home</a>
+          </li>
+        
+      
+
+          <li class="site-nav--has-submenu">
+            <a href="#"
+               class="site-nav__link dropdown-button"
+               data-activates="features-dropdown"
+               data-belowOrigin="true"
+               data-constrainWidth="false"
+               data-hover="true">
+              Pages
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+            <ul id="features-dropdown" class="site-nav__submenu dropdown-content">
+              
+				<li><a class="g" href="/about"><i class="material-icons left">description</i>About</a></li>
+				<li><a href="/announcements"><i class="material-icons left">announcement</i>Announcements</a></li>
+				<li><a href="https://codewithshakyo.blogspot.com/"><i class="material-icons left">art_track</i>Blog</a></li>
+				<li><a href="/contact"><i class="material-icons left">message</i>Contact</a></li>
+				<li><a href="/edit_profile"><i class="material-icons left">account_box</i>Edit Profile</a></li>
+				<li><a href="/change_password"><i class="material-icons left">enhanced_encryption</i>Change Password</a></li>
+				<li><a href="/info"><i class="material-icons left">account_circle</i>Logged in as {{user.username}}</a></li>
+				<li><a href="https://github.com/Shakyo-choudhury"><i class="material-icons left">code</i>github</a></li>
+				<li><a href="https://www.instagram.com/codeitwithshakyo/"><i class="material-icons left">question_answer</i>instagram</a></li>
+				<li><a href="https://www.youtube.com/channel/UCsTBIx1rTYG_zYJVCqJEfoA"><i class="material-icons left">youtube_searched_for</i>Subscribe for free!</a></li>
+              
+            </ul>
+          </li>
+        
+      
+
+          <li >
+            <a href="https://codewithshakyo.blogspot.com/" class="site-nav__link">
+				<i class="material-icons left">art_track</i>Blog</a>
+          </li>
+          <li>
+            <a href="/login" id="customer_login_link"><i class="material-icons left">account_box</i>Log in</a>
+          </li>
+          <li>
+            <a href="/register" id="customer_register_link"><i class="material-icons left">account_circle</i>Create account</a>
+		  </li>
+		  <li>
+			<a href="/logout" id="customer_logout_link"><i class="material-icons left">exit_to_app</i>Logout</a>
+    </ul>
+  </div>
+  
+  <div class="nav-header center">
+  
+
+    <!-- Show Carousel instead of default page titles -->
+    
+      
+      
+
+      
+
+      
+      
+
+      <h1>PROFILE INFO</h1>
+      <div class="tagline">{{user.username}}</div>
+    
+
+  </div>
+</nav>
+<ul class="side-nav" id="nav-mobile">
+
+  
+    
+      <li> <a href="/login" id="customer_login_link"><i class="material-icons left">account_box</i>Log in</a> </li>
+      <li> <a href="/register" id="customer_register_link"><i class="material-icons left">account_circle</i>Create account</a> </li>
+    
+  
+
+  
+
+      <li >
+        <a href="/" class="site-nav__link"><i class="material-icons left">home</i>Home</a>
+      </li>
+    
+  
+
+      <li class="site-nav--has-submenu">
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header">Pages<i class="material-icons right">arrow_drop_down</i></div>
+            <div class="collapsible-body no-padding">
+              <ul>
+                
+                <li><a class="g" href="/about"><i class="material-icons  left">description</i>About</a></li>
+                <li><a href="/announcements"><i class="material-icons left">announcement</i>Announcements</a></li>
+                <li><a href="https://codewithshakyo.blogspot.com/"><i class="material-icons  left">art_track</i>Blog</a></li>
+                <li><a href="/contact"><i class="material-icons  left">message</i>Contact</a></li>
+                <li><a href="/info"><i class="material-icons  left">accessibility</i>Personal Info</a></li>
+                <li><a href="/edit_profile"><i class="material-icons left">account_box</i>Edit Profile</a></li>
+                <li><a href="/change_password"><i class="material-icons  left">enhanced_encryption</i>Change Password</a></li>
+                <li><a href="/info"><i class="material-icons  left">account_circle</i>Logged in as {{user.username}}</a></li>
+                <li><a href="https://github.com/Shakyo-choudhury"><i class="material-icons  left">code</i>github</a></li>
+                <li><a href="https://www.instagram.com/codeitwithshakyo/"><i class="material-icons  left">question_answer</i>instagram</a></li>
+                <li><a href="https://www.youtube.com/channel/UCsTBIx1rTYG_zYJVCqJEfoA"><i class="material-icons  left">youtube_searched_for</i>Subscribe for free!</a></li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+    
+  
+
+      <li >
+        <a href="https://codewithshakyo.blogspot.com/" class="site-nav__link"><i class="material-icons left">art_track</i>Blog</a>
+      </li>
+    
+  
+<li>
+  <a href="/logout" class="site-nav__link"><i class="material-icons left">exit_to_app</i>Logout</a>
+</li>
+  
+</ul>
+
+
+
+      <i class="popup-close material-icons">close</i>
+    </div>
+
+  </header>
+</div>
+
+
+</div>
+
+  <main role="main" id="MainContent">
+    <div class="cart-container container">
+
+  
+  <div class="empty-container">
+    <div class="supports-cookies center">
+      <h3>YOUR BASIC INFORMATION ON THIS WEBSITE:</h3>
+	  {% if user.is_authenticated %}
+	<h4>Name: {{user.first_name}} {{ user.last_name}}</h4>
+	<h4>Username: {{user.username}}</h4>
+	<h4>Email: {{user.email}}</h4>
+  {%else%}
+  <h4>You are not logged in. <br>
+  Login to see your profile info.</h4>
+
+	{%endif%}
+      <a class="btn-large" href="/"><i class="material-icons left">home</i>HOME</a>
+    </div>
+
+    
+    <div class="supports-no-cookies">
+      <p>Enable cookies to use the shopping cart</p>
+    </div>
+  </div>
+
+</div>
+
+  </main>
+  <div class="footer-copyright">
+    <div class="container">
+			<a href="https://www.instagram.com/codeitwithshakyo/" title="Materialize Shopify Themes on Instagram">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+				</svg>
+			  <span class="icon-fallback-text">Instagram</span>
+			</a>
+		
+      <small>   Copyright &copy; 2022, <a href="/" title="">CodeItWithShakyo</a></small>
+    </div>
+  </div>
+
+
+</div>
+
+
+  <!-- Javascript -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script src="//cdn.shopify.com/shopifycloud/shopify/assets/themes_support/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js" type="text/javascript"></script>
+
+  <script src="//cdn.shopify.com/shopifycloud/shopify/assets/themes_support/api.jquery-e94e010e92e659b566dbc436fdfe5242764380e00398907a14955ba301a4749f.js" type="text/javascript"></script>
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/vendor.js?v=10503683447685548416" defer="defer"></script><!--<![endif]-->
+  <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/vendor.js?v=10503683447685548416"></script><![endif]-->
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?v=12308870411805198950" defer="defer"></script><!--<![endif]-->
+  <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?v=12308870411805198950"></script><![endif]-->
+
+
+</body>
+</html>

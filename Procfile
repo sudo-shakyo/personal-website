@@ -1,0 +1,1 @@
+web: gunicorn codewithshakyo.wsgi --log-file -
