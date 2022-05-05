@@ -215,3 +215,5 @@ def contact(request):
 
 def terms(requests):
 	return HttpResponse("Terms and Conditions Page Conditions: \n 1. If you use my website then you are not supposed to copy paste my code in your website.\n 2. If you copy paste my code then it is your reponsibility to ensure that it works properly it is not my fault if the code doesn't run at your server. \n 3. I am no way responsible if your password or account in this website gets hacked. \n 4. You may or may not get the reply of your message that you have posted in the contact page. \n 5. If you login in my website then it is your sole duty to remember your password. \n 5.1. If you still forget your password then you can go to the forgot password page and raise a complaint. But you may or may not get your new password and if you get it and you don't like the passoword then you can change it at the change password page. \n 6. You shall not post any rude or hate message at the contact page and if you do then your account might be terminated.")
+def sitemap(requests):
+	return render(requests,"sitemap.txt")
