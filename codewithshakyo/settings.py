@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-_v2env$wv_z6gay4q-xzwr#3w8%l84#nj=(@fr*dt230s&z-o@
 # dont use DEBUG = true in production and initialize the url in ALLOWED_HOSTS       
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',  'codewithshakyo.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1',  'codeitwithshakyo.herokuapp.com']
 
 
 # Application definition
