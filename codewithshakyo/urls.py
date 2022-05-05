@@ -45,7 +45,7 @@ urlpatterns = [
     path('edit_profile', views.edit_profile, name='edit_profile'),
     path('change_password', views.change_password, name='change_password'),
     path('terms', views.terms, name='terms'), 
-    path('info/', views.personal_info, name='info'),
+    path('personal_info/', views.personal_info, name='info'),
 
 
     #url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 

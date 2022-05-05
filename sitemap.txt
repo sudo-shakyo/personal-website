@@ -1,0 +1,15 @@
+https://codeitwithshakyo.herokuapp.com/
+https://codeitwithshakyo.herokuapp.com/blog
+https://codeitwithshakyo.herokuapp.com/announcements
+https://codeitwithshakyo.herokuapp.com/change_password
+https://codeitwithshakyo.herokuapp.com/login
+https://codeitwithshakyo.herokuapp.com/logout
+https://codeitwithshakyo.herokuapp.com/register
+https://codeitwithshakyo.herokuapp.com/about
+https://codeitwithshakyo.herokuapp.com/message
+https://codeitwithshakyo.herokuapp.com/contact
+https://codeitwithshakyo.herokuapp.com/edit_profile
+https://codeitwithshakyo.herokuapp.com/terms
+https://codeitwithshakyo.herokuapp.com/info
+https://codeitwithshakyo.herokuapp.com/admin
+https://codeitwithshakyo.herokuapp.com/personal_info
