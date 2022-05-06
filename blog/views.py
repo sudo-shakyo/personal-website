@@ -206,11 +206,6 @@ def contact(request):
 		desc = request.POST.get('desc')
 		contact = Contact(name=name, desc=desc, email=email, username=username ,date=datetime.now())
 		contact.save()
-		send_mail(
-			name, # subject
-			desc, # message	
-			email, # from email
-			['officialshakyo@gmail.com'])
 	return render(request, 'contact.html')
 
 def terms(requests):
