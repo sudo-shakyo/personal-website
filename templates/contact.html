@@ -202,7 +202,7 @@
   
     
       <li> <a href="/login" id="customer_login_link"><i class='material-icons left'>account_box</i>Log in</a> </li>
-      <li> <a href="/account/register" id="customer_register_link"><i class="material-icons left">account_circle</i>Create account</a> </li>
+      <li> <a href="/register" id="customer_register_link"><i class="material-icons left">account_circle</i>Create account</a> </li>
     
   
 
@@ -246,27 +246,7 @@
     
 </ul>
 
-<div data-section-id="header" data-section-type="header-section">
-  <header role="banner">
 
-    <div class="popup-search-wrapper">
-      <form action="/search" method="get" role="search">
-  <label for="Search" class="label-hidden">
-    Search our store
-  </label>
-  <input type="search"
-         name="q"
-         id="Search"
-         value=""
-         placeholder="Search our store">
-  <button type="submit" class="btn-flat btn-floating waves-effect">
-    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 20 20"><path fill="#444" d="M18.64 17.02l-5.31-5.31c.81-1.08 1.26-2.43 1.26-3.87C14.5 4.06 11.44 1 7.75 1S1 4.06 1 7.75s3.06 6.75 6.75 6.75c1.44 0 2.79-.45 3.87-1.26l5.31 5.31c.45.45 1.26.54 1.71.09.45-.36.45-1.17 0-1.62zM3.25 7.75c0-2.52 1.98-4.5 4.5-4.5s4.5 1.98 4.5 4.5-1.98 4.5-4.5 4.5-4.5-1.98-4.5-4.5z"/></svg>
-    <span class="icon-fallback-text">Search</span>
-  </button>
-</form>
-
-      <i class="popup-close material-icons">close</i>
-    </div>
 
   </header>
 </div>
@@ -325,7 +305,7 @@
         id="desc"></textarea>
     </div>
 
-    <input type="submit" class="btn" value="Send" onclick="alert1">
+    <input type="submit" class="btn" value="Send" onclick="alert1()">
 
   </form>
 
@@ -374,14 +354,7 @@
 
   
 
-  <script>
-    $(document).ready(function() {
-      var categories = $('nav .categories-container');
-      if (categories.length) {
-        categories.pushpin({ top: categories.offset().top });
-      }
-    });
-  </script>
+  
 
 </body>
 </html>
