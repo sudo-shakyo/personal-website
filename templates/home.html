@@ -23,7 +23,14 @@
 <meta name="shopify-checkout-api-token" content="6aacc581eb2b41d74f03c38d3c985dba">
 <meta id="in-context-paypal-metadata" data-shop-id="17758583" data-venmo-supported="true" data-environment="production" data-locale="en_US" data-paypal-v4="true" data-currency="USD">
 
-
+<style>
+  .tut1{
+    color:white;
+  }
+  .tut1:hover{
+    color:black;
+  }
+</style>
 </head>
 
   <body>
@@ -244,7 +251,24 @@
         </div>
       </div>
     </div>
+    <div class="v r full-height">
+      <div class="c">
+        <div class="d iv jc offset-m1 ef">
+          <h1>Recent Videos....</h1>
+          {% comment %} <div class="c masonry-grid"> {% endcomment %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8LAczOZI3NM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h4>Installing Python, VS CODE and writing our first program!</h4>
+            <h5><a href = "/announcements" class = "tut1">Click here for the notes</a></h5>
+            <br><hr><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1be84u-4tog" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h4>MARS Ai Teaser!</h4>
+            
 
+       
+        {% comment %} </div> {% endcomment %}
+      </div>
+    </div>
+<hr>
     <div class="v r full-height">
       <div class="c">
         <div class="d iv jc offset-m1 ef">
@@ -309,6 +333,7 @@
       </div>
     </div>
     
+    
 
     <div class="v r valign-wrapper">
       <div class="c ci">
@@ -344,7 +369,7 @@
 
   <!-- Code injected by live-server -->
 
-<div class="footer-copyright">
+{% comment %} <div class="footer-copyright">
   <div class="container">
     <a href="https://www.instagram.com/codeitwithshakyo/" title="Materialize Shopify Themes on Instagram">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -355,7 +380,7 @@
   
     <small>   Copyright &copy; 2022, <a href="/" title="">CodeItWithShakyo</a></small>
   </div>
-</div>
+</div> {% endcomment %}
 </body>
 
 </html>

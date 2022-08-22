@@ -54,9 +54,55 @@
   
     <!--[if (gt IE 9)|!(IE)]><!--><script src="//cdn.shopify.com/shopifycloud/shopify/assets/themes_support/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js" defer="defer"></script><!--<![endif]-->
     <!--[if lte IE 9]><script src="//cdn.shopify.com/shopifycloud/shopify/assets/themes_support/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js"></script><![endif]-->
-  
+   <!--link rel = "stylesheet" href = "https://drive.google.com/file/d/13eRbGWAJbJfFvx6U9C429i8Yhhya_VhN/view?usp=sharing" type = "text/css"!-->
+   <style type="text/css">
+     #output{
+    height: 0px;
+    width: 100px;
+    background-color: #bbb;
+    border-radius: 100%;
+    display: inline-block;}  
 
-  
+
+    /* Container needed to position the button. Adjust the width as needed */
+.profile-pic #file{
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.profile-pic #output {
+  width: 90%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.profile-pic #file {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.profile-pic #file:hover {
+  background-color: black;
+}
+   </style>
+    <script>
+      var loadFile = function (event) {
+        var image = document.getElementById("output");
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
+      
+    </script>
 </head>
 <body id="create-account" class="template-register ">
 
@@ -65,13 +111,7 @@
   <div id="shopify-section-header" class="shopify-section">
 
 
-<style>
-  
 
-  
-
-  
-</style>
 
 <!-- Navbar and Header -->
 
@@ -133,7 +173,7 @@
       
 
           <li >
-            <a href="/blogs/news" class="site-nav__link">Blog</a>
+            <a href="https://codewithshakyo.blogspot.com/" class="site-nav__link">Blog</a>
           </li>
         
       
@@ -153,10 +193,10 @@
       
         
           <li>
-            <a href="/account/login" id="customer_login_link">Log in</a>
+            <a href="/login" id="customer_login_link">Log in</a>
           </li>
           <li>
-            <a href="/account/register" id="customer_register_link">Create account</a>
+            <a href="/register" id="customer_register_link">Create account</a>
           </li>
         
       
@@ -272,25 +312,35 @@
 
           <form method="post" action="/edit_profile" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer" /><input type="hidden" name="utf8" value="✓" />
             <h4 class="center">Edit Your Profile</h4>
+            <div class="alert alert-danger alart-dismissable" role ="alert">
+                <div class="profile-pic">
+                  <label class="-label" for="file">
+                      {% comment %} <span class="glyphicon glyphicon-camera"></span> {% endcomment %}
+                        <span>Change DP</span>
+                  </label>
+                  <input id="file" type="file" onchange="loadFile(event)"/>
+                  <img src="https://media.istockphoto.com/vectors/user-icon-people-icon-isolated-on-white-background-vector-vector-id1210939712?k=20&m=1210939712&s=612x612&w=0&h=xJqEPQnMiNofprbLXWdEtJQ75QL79lQ5N76J4JOdTIM=" id="output" width="200" />
+              </div>
+            </div>
+            <br>
+            <br>
+            <br><br><br><br>
 			{% csrf_token %}
 
 		{% if form.errors %}
 
-		      <div class="alert alert-danger alart-dismissable" role ="alert">
-                <button class="close" data-dismiss="alert">
-                    <small><sup>x</sup></small>
-                  </button>
-               
+
 
                {% for field in form %}
                	{% if field.errors %}
                		{{ field.errors }}
+                  
+                 
                	{% endif%}
 
                	{% endfor %}
 
 
-              </div>
 
   {% endif %}
 
