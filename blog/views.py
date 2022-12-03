@@ -1,8 +1,8 @@
 from ast import For
-from chatbot import chatbot
+# from chatbot import chatbot
 from django.views.generic import ListView
 import requests
-from blog.app import get_bot_response
+# from blog.app import get_bot_response
 from flask import Flask, render_template, request
 from django.shortcuts import render
 from django.shortcuts import render, redirect
@@ -217,6 +217,6 @@ def terms(requests):
 def sitemap(requests):
 	return render(requests,"sitemap.txt")
 
-def bot(requests):
-	get_bot_response()
-	return render(requests, 'bot.html')
+# def bot(requests):
+# 	get_bot_response()
+# 	return render(requests, 'bot.html')
