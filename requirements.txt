@@ -166,8 +166,6 @@ pyttsx3==2.90
 pytweening==1.0.4
 pytz==2022.1
 pytz-deprecation-shim==0.1.0.post0
-pywhatkit==5.4
-pywin32==304
 PyYAML==3.13
 pyzmq==22.3.0
 qtconsole==5.3.0
