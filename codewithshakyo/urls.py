@@ -49,7 +49,7 @@ urlpatterns = [
     path('personal_info/', views.personal_info, name='info'),
     path('jarvis', views.jarvis, name = 'jarvis'),
     path('help', views.help, name = "help"),
-    path('chatbot', views.bot, name = "chatbot")
+    # path('chatbot', views.bot, name = "chatbot")
     # url(r'^media/(?P<path>.*)$', serve,{'document_root':        settings.MEDIA_ROOT}), 
     # url(r'^static/(?P<path>.*)$', serve,{'document_root':   settings.STATIC_ROOT}), 
 ]
