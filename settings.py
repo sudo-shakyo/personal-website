@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-_v2env$wv_z6gay4q-xzwr#3w8%l84#nj=(@fr*dt230s&z-o@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['codeitwithshakyo.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'codeitwithshakyo.herokuapp.com']
 
 
 # Application definition
@@ -143,13 +143,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_DIR=os.path.join(BASE_DIR,'static')
-
-#email settings
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_HOST_USER= 'officialshakyo@gmail.com'
-EMAIL_HOST_PASSWORD= 'moumita@123'
-EMAIL_USE_TLS=True 
 
 
 MEDIA_URL='/media/'
