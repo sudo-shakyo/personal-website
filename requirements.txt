@@ -8,17 +8,13 @@ cloudpathlib==0.21.1
 confection==0.1.5
 cymem==2.0.11
 defusedxml==0.7.1
-distro @ file:///work/perseverance-python-buildout/croot/distro_1728396110052/work
 Django==5.2.3
 en_core_web_lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl#sha256=293e9547a655b25499198ab15a525b05b9407a75f10255e405e8c3854329ab63
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85
 Flask==3.1.1
-frozendict @ file:///work/perseverance-python-buildout/croot/frozendict_1728497542215/work
 greenlet==3.2.3
-idna @ file:///work/perseverance-python-buildout/croot/idna_1728385935861/work
 itsdangerous==2.2.0
 Jinja2==3.1.6
-jsonpatch @ file:///work/perseverance-python-buildout/croot/jsonpatch_1728399595941/work
 jsonpointer==2.1
 langcodes==3.5.0
 language_data==1.3.0
