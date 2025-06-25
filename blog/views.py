@@ -1,70 +1,49 @@
 from ast import For
-# from chatbot import chatbot
 from django.views.generic import ListView
 import requests
-# from blog.app import get_bot_response
+from social_django.models import UserSocialAuth
 from flask import Flask, render_template, request
+from django.shortcuts import render
+
+
+from django.shortcuts import render
+from django.http import JsonResponse
+from blog.models import Query, ConsumerHelpDatabase
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib import messages 
 from codewithshakyo.forms import SignUpForm, EditProfileForm 
-# Create your views here.
 from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
 from blog.models import Contact, Msg
 from datetime import datetime
 from blog.models import Search
 import webbrowser
-#from motech.mars import call
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-# Create your views here.
-'''
-def cam():
-        key = cv2.waitKey(1)
-        webcam= cv2.VideoCapture(0)
-        while True:
-         try:
-                check, frame= webcam.read()
-                print(check)
-                print(frame)
-                cv2.imshow("capturing", frame)
-                key= cv2.waitKey(1)
-                if key == ord('s'):
-                    cv2.imwrite(filename="saved_img.jpg", img=frame)
-                    webcam.release()
-                    img_new= cv2.imread('saved_img.jpg', cv2.IMREAD_GRAYSCALE)
-                    img_new= cv2.imshow("Captured Image", img_new)
-                    cv2.waitKey(1650)
-                    cv2.destroyAllWindows()
-                    print("processing image")
-                    img_=cv2.imread('saved_img.jpg', cv2.IMREAD_ANYCOLOR)
-                    gray=cv2.cvtColor(img_, cv2.COLOR_BGR2GRAY)
-                    img_=cv2.resize(gray,(28,29))
-                    img_resized=cv2.imwrite(filename='saved_img_final.jpg', img=img_)
-                    print("image saved! ")
-                    break
-                elif key == ord('q'):
-                    print("turning off camera")
-                    webcam.release()
-                    print("program ended")
-                    cv2.destroyAllWindows()
-                    break
-         except(KeyboardInterrupt):
-                print("turning off camera")
-                webcam.release()
-                print("camera is off")
-                cv2.destroyAllWindows()
-                break
-'''
+class HomeView(LoginRequiredMixin, TemplateView):
+	template_name = 'testing.html'
+
+
+
+
 def about(request):
 	return render(request, 'blog.html')
 
@@ -77,7 +56,9 @@ def homepage(request):
 
 
 			
- 
+
+
+
 def jarvis(request):
 	return render(request, 'jarvis.html')
 
@@ -183,23 +164,8 @@ def change_password(request):
 	context = {'form': form}
 	return render(request, 'change_password.html', context)
     
-
-'''
-def contact(request):
-    if request.method== 'POST':
-        name=request.POST['name']
-        email=request.POST['email']
-        username=request.POST['username']
-        desc=request.POST['desc']
-        #contact= Contact(name=name, desc=desc, email=email, username=username, date=datetime.today())
-        #contact.save()
-		send_mail(
-			name, # subject 
-			desc, # message
-			email, # from email
-			['officialshakyo@gmail.com'])
-		return render(request, 'contact.html')
-'''
+def login_testing(request):
+	return render(request, 'login_testing.html')
 
 
 def contact(request):
@@ -213,10 +179,53 @@ def contact(request):
 	return render(request, 'contact.html')
 
 def terms(requests):
-	return HttpResponse("Terms and Conditions Page Conditions: \n 1. If you use my website then you are not supposed to copy paste my code in your website.\n 2. If you copy paste my code then it is your reponsibility to ensure that it works properly it is not my fault if the code doesn't run at your server. \n 3. I am no way responsible if your password or account in this website gets hacked. \n 4. You may or may not get the reply of your message that you have posted in the contact page. \n 5. If you login in my website then it is your sole duty to remember your password. \n 5.1. If you still forget your password then you can go to the forgot password page and raise a complaint. But you may or may not get your new password and if you get it and you don't like the passoword then you can change it at the change password page. \n 6. You shall not post any rude or hate message at the contact page and if you do then your account might be terminated.")
+	return HttpResponse("Terms and Conditions Page Conditions: \n 1. If you use my website then you are not supposed to copy paste my code in your website.\n 2. If you copy paste my code then it is your reponsibility to ensure that it works properly it is not my fault if the code doesn't run at your server. \n 3. I am no way responsible if your password or account in this website gets hacked. \n 4. You may or may not get the reply of your message that you have posted in the contact page. \n 5. If you login in my website then it is your sole duty to remember your password. \n 5.1. If you still forget your password then you can go to the forgot password page and raise a complaint. But you may or may not get your new password and if you get it and you don't like the passoword then you can change it at the change password page. \n 6. You shall not post any rude or hate message at the contact page and if you do then your account might be terminated. ")
+
+
 def sitemap(requests):
 	return render(requests,"sitemap.txt")
 
-# def bot(requests):
-# 	get_bot_response()
-# 	return render(requests, 'bot.html')
+
+
+class SettingsView(LoginRequiredMixin, TemplateView):
+	def get(self, request, *args, **kwargs):
+		user =  request.user
+
+		try:
+			github_login = user.social_auth.get(provider = 'github')
+		except UserSocialAuth.DoesNotExist:
+			github_login = None
+		
+		try:
+			twitter_login = user.social_auth.get(provider = 'twitter')
+		except UserSocialAuth.DoesNotExist:
+			twitter_login = None
+		
+		try:
+			facebook_login = user.social_auth.get(provider = 'facebook')
+		except UserSocialAuth.DoesNotExist:
+			facebook_login = None
+
+		can_disconnect = (user.social_auth.count() > 1 or user.has_usable_password())
+
+		return render(request, 'index.html',{
+			'github_login' : github_login,
+			'twitter_login' : twitter_login,
+			'facebook_login' : facebook_login,
+			'can_disconnect' : can_disconnect
+		})
+	
+
+
+data = [
+    ('How do I reset my password?', 'You can reset your password by going to the account settings page.'),
+    ('How do I cancel my subscription?', 'To cancel your subscription, go to the subscription page and click on the cancel button.'),
+    ('What payment methods do you accept?', 'We accept credit cards, PayPal, and Apple Pay.'),
+    ('How do I contact customer support?', 'You can contact customer support by emailing support@example.com or calling our toll-free number.'),
+]
+
+
+
+
+def testimonials(request):
+	return render(request, 'testimonials.html')

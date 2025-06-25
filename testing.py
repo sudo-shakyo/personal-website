@@ -1,2 +1,2 @@
-x = open('C:/Users/SHAKYO/Downloads/coronabot-chatterbot-master/coronabot-chatterbot-master/training_data/data.txt')
-print(x)
+x = open('your data corpus')
+print(x.read())

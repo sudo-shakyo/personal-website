@@ -32,15 +32,15 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'django-insecure-_v2env$wv_z6gay4q-xzwr#3w8%l84#nj=(@fr*dt230s&z-o@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# dont use DEBUG = true in production and initialize the url in ALLOWED_HOSTS       
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'codeitwithshakyo.herokuapp.com']
-
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+# '127.0.0.1',  'codeitwithshakyo.herokuapp.com'
 
 # Application definition
 
 INSTALLED_APPS = [
-    'blog.apps.BlogConfig',
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,9 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    #
-    # 'blog',
+    'blog',
+    'chatbot',
+    'chatterbot.ext.django_chatterbot',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'codewithshakyo.urls'
@@ -77,10 +79,20 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <-- Here
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.github.GithubOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'codewithshakyo.wsgi.application'
 
@@ -133,17 +145,32 @@ USE_TZ = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
+# added manually 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = '/login'
-
+#static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_DIR=os.path.join(BASE_DIR,'static')
 
+# chatterbot settings
+CHATTERBOT = {
+    'name': 'Tech Support Bot',
+    'logic_adapters': [
+        'chatterbot.logic.MathematicalEvaluation',
+        'chatterbot.logic.TimeLogicAdapter',
+        'chatterbot.logic.BestMatch'
+    ]
+}
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
-MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+SOCIAL_AUTH_FACEBOOK_KEY = '598568115430831'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e355f9a28900fc10ecb0c9cfb848d4c1'
+
+# Social Auth Login Twitter
+SOCIAL_AUTH_TWITTER_KEY = '26581008'
+SOCIAL_AUTH_TWITTER_SECRET = 'GRdThMqwWNYIPe7xYmWyKHdiusHEJAgXgQRTh6JxFpkBISlFOg'
+ID='bom1::j7vzl-1693743715338-fdb4be7f4749'

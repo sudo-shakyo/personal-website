@@ -1,0 +1,33 @@
+/* Light theme styles */
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 1em;
+  }
+  
+  /* Dark theme styles */
+  
+  body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+  
+  h1 {
+    color: #f0f0f0;
+  }
+  
+  p {
+    color: #ccc;
+  }
+  

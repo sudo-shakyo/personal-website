@@ -33,10 +33,10 @@ SECRET_KEY = 'django-insecure-_v2env$wv_z6gay4q-xzwr#3w8%l84#nj=(@fr*dt230s&z-o@
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # dont use DEBUG = true in production and initialize the url in ALLOWED_HOSTS       
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',  'codeitwithshakyo.herokuapp.com']
-
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.29.145']
+# '127.0.0.1',  'codeitwithshakyo.herokuapp.com'
 
 # Application definition
 
@@ -49,7 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'chatbot',
     'chatterbot.ext.django_chatterbot',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'codewithshakyo.urls'
@@ -76,10 +79,20 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <-- Here
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.github.GithubOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'codewithshakyo.wsgi.application'
 
@@ -93,7 +106,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -152,3 +164,12 @@ CHATTERBOT = {
         'chatterbot.logic.BestMatch'
     ]
 }
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
+SOCIAL_AUTH_FACEBOOK_KEY = '598568115430831'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e355f9a28900fc10ecb0c9cfb848d4c1'
+
+# Social Auth Login Twitter
+SOCIAL_AUTH_TWITTER_KEY = '26581008'
+SOCIAL_AUTH_TWITTER_SECRET = 'GRdThMqwWNYIPe7xYmWyKHdiusHEJAgXgQRTh6JxFpkBISlFOg'
+ID='bom1::j7vzl-1693743715338-fdb4be7f4749'

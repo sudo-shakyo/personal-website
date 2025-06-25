@@ -461,11 +461,20 @@ for (var attr in meta) {
           <li><a class='dropdown-button' href='#' data-activates='feature-dropdown' data-belowOrigin="true" data-constrainWidth="false">More...<i class="material-icons bt">arrow_drop_down</i></a></li>
         </ul>
         <!-- Dropdown Structure -->
-        <ul id='feature-dropdown' class='dropdown-content'>
-          <li><a href="/">Fullscreen Header</a></li>
-          <li><a href="/pages/horizontal">Horizontal Style</a></li>
-          <li><a href="/pages/no-image">No Image Expand</a></li>
-        </ul>
+        {% comment %} <ul id='feature-dropdown' class='dropdown-content'>
+          <li><a href="/about"><i class="material-icons  left">description</i>About</a></li>
+                <li><a href="/chatbot"><i class="material-icons white-text left">chat_bubble</i>Chatbot</a></li>
+                <li><a href="/announcements"><i class="material-icons left">announcement</i>Announcements</a></li>
+                <li><a href="https://codewithshakyo.blogspot.com/"><i class="material-icons  left">art_track</i>Blog</a></li>
+                <li><a href="/contact"><i class="material-icons  left">message</i>Contact</a></li>
+                <li><a href="/info"><i class="material-icons  left">accessibility</i>Personal Info</a></li>
+                <li><a href="/edit_profile"><i class="material-icons left">account_box</i>Edit Profile</a></li>
+                <li><a href="/change_password"><i class="material-icons  left">enhanced_encryption</i>Change Password</a></li>
+                <li><a href="/info"><i class="material-icons  left">account_circle</i>Logged in as {{user.username}}</a></li>
+                <li><a href="https://github.com/Shakyo-choudhury"><i class="material-icons  left">code</i>github</a></li>
+                <li><a href="https://www.instagram.com/_shakyo"><i class="material-icons  left">question_answer</i>instagram</a></li>
+                <li><a href="https://www.youtube.com/channel/UCsTBIx1rTYG_zYJVCqJEfoA"><i class="material-icons  left">youtube_searched_for</i>Subscribe for free!</a></li>
+        </ul> {% endcomment %}
 
       </div>
 
@@ -489,15 +498,20 @@ for (var attr in meta) {
         </div>
       </div>
     </nav>
-    <ul class="side-nav" id="nav-mobile">
-      <li><a href="/pages/demo"><i class="material-icons">camera</i>Gallery</a></li>
-      <li class="k"><a href="/pages/dark-theme"><i class="material-icons">brightness_3</i>Dark Theme</a></li>
-      <li><a href="/pages/blog"><i class="material-icons">edit</i>Blog</a></li>
-      <li><a href="/pages/docs"><i class="material-icons">school</i>Docs</a></li>
-      <li><a href="/pages/full-header"><i class="material-icons">fullscreen</i>Fullscreen Header</a></li>
-      <li><a href="/pages/horizontal"><i class="material-icons">swap_horiz</i>Horizontal Style</a></li>
-      <li><a href="/pages/no-image"><i class="material-icons">texture</i>No Image Expand</a></li>
-    </ul>
+    {% comment %} <ul class="side-nav" id="nav-mobile">
+      <li><a  href="/about"><i class="material-icons  left">description</i>About</a></li>
+                <li><a href="/chatbot"><i class="material-icons white-text left">chat_bubble</i>Chatbot</a></li>
+                <li><a href="/announcements"><i class="material-icons left">announcement</i>Announcements</a></li>
+                <li><a href="https://codewithshakyo.blogspot.com/"><i class="material-icons  left">art_track</i>Blog</a></li>
+                <li><a href="/contact"><i class="material-icons  left">message</i>Contact</a></li>
+                <li><a href="/info"><i class="material-icons  left">accessibility</i>Personal Info</a></li>
+                <li><a href="/edit_profile"><i class="material-icons left">account_box</i>Edit Profile</a></li>
+                <li><a href="/change_password"><i class="material-icons  left">enhanced_encryption</i>Change Password</a></li>
+                <li><a href="/info"><i class="material-icons  left">account_circle</i>Logged in as {{user.username}}</a></li>
+                <li><a href="https://github.com/Shakyo-choudhury"><i class="material-icons  left">code</i>github</a></li>
+                <li><a href="https://www.instagram.com/_shakyo"><i class="material-icons  left">question_answer</i>instagram</a></li>
+                <li><a href="https://www.youtube.com/channel/UCsTBIx1rTYG_zYJVCqJEfoA"><i class="material-icons  left">youtube_searched_for</i>Subscribe for free!</a></li>
+    </ul>  {% endcomment %}
 
     <!-- Gallery -->
     <div id="portfolio" class="cx gray">
@@ -957,13 +971,252 @@ pdf = str(input('enter the relative path or the file name of the pdf that you wa
                       <li>
                         <div class="collapsible-header">
                           <i class="material-icons">attach_money</i>
-                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>Bitcoin updates</span></div>
-                        <div class="collapsible-body"><p>In this python file we're gonna</p></div>
+                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>Bitcoin updates - bit_coin_updates.py</span></div>
+                        <div class="collapsible-body"><p>In this Python file we are going to integrate <a href = "https://newsapi.org/">newsapi.org</a> and use its API, along with your API key. The code is given below:
+                          
+                          import pywhatkit<br>
+                          import requests<br>
+                          import time<br>
+                          from my_inputs import talk<br>
+                          <br>
+                          <br>
+                          def bitcoin():<br>
+                              main_url = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=your_api_key"<br>
+                              open_google_page = requests.get(main_url).json()<br>
+                              articles = open_google_page["articles"]<br>
+                          <br>
+                              result = []<br>
+                          <br>
+                              for a in articles:<br>
+                                  result.append(a["title"])<br>
+                          <br>
+                              for i in range(10):<br>
+                                  time.sleep(5)<br>
+                                  Headline = i+1, result[i]<br>
+                                  print(Headline)<br>
+                                  talk(Headline)<br>
+                          if __name__==("__main__"):<br>
+                              bitcoin()<br></p></div>
                       </li>
-                
+                      <li>
+                        <div class="collapsible-header">
+                          <i class="material-icons">camera_alt</i>
+                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>Automated Camera - my_camera.py</span></div>
+                        <div class="collapsible-body"><p>In this camera.py file we are gonna make a camera which captures pictures, using cv2 module of python we are going to program this file. The code is below:
+                          <br>
+                          <br>
+                          import cv2 <br>
+                          def cam():<br>
+                              <br>
+                              key = cv2. waitKey(1)<br>
+                              webcam = cv2.VideoCapture(0)<br>
+                              while True:<br>
+                                  try:<br>
+                                      check, frame = webcam.read()<br>
+                                      print(check) #prints true as long as the webcam is running<br>
+                                      print(frame) #prints matrix values of each framecd <br>
+                                      cv2.imshow("Capturing", frame)<br>
+                                      key = cv2.waitKey(1)<br>
+                                      if key == ord('s'): <br>
+                                          cv2.imwrite(filename='saved_img.jpg', img=frame)<br>
+                                          webcam.release()<br>
+                                          img_new = cv2.imread('saved_img.jpg', cv2.IMREAD_GRAYSCALE)<br>
+                                          img_new = cv2.imshow("Captured Image", img_new)<br>
+                                          cv2.waitKey(1650)<br>
+                                          cv2.destroyAllWindows()<br>
+                                          print("Processing image...")<br>
+                                          img_ = cv2.imread('saved_img.jpg', cv2.IMREAD_ANYCOLOR)<br>
+                                          print("Converting RGB image to grayscale...")<br>
+                                          gray = cv2.cvtColor(img_, cv2.COLOR_BGR2GRAY)<br>
+                                          print("Converted RGB image to grayscale...")<br>
+                                          print("Resizing image to 28x28 scale...")<br>
+                                          img_ = cv2.resize(gray,(28,28))<br>
+                                          print("Resized...")<br>
+                                          img_resized = cv2.imwrite(filename='saved_img-final.jpg', img=img_)<br>
+                                          print("Image saved!")<br>
+                                  <br>
+                                          break<br>
+                                      elif key == ord('q'):<br>
+                                          print("Turning off camera.")<br>
+                                          webcam.release()<br>
+                                          print("Camera off.")<br>
+                                          print("Program ended.")<br>
+                                          cv2.destroyAllWindows()<br>
+                                          break<br>
+                                  <br>
+                                  except(KeyboardInterrupt):<br>
+                                      print("Turning off camera.")<br>
+                                      webcam.release()<br>
+                                      print("Camera off.")<br>
+                                      print("Program ended.")<br>
+                                      cv2.destroyAllWindows()<br>
+                                      break<br>
+                          if __name__==("__main__"):<br>
+                              cam()<br>
+                          
+                          </p></div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">
+                          <i class="material-icons">
+                            email
+                          </i>
+                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>Automated email generator - my_email.py</span></div>
+                        <div class="collapsible-body"><p>
+                          Are you tired of spending hours crafting the perfect email message? Try our new email sender and generator! With just a few clicks, you can quickly create personalized messages that will get your point across. Give it a try today and start sending emails faster than ever before! 
+<br><br><br>
+                          Here's the code to make one:<br>
+<br><br>
+
+                          from email import message<br>
+                          import smtplib<br>
+                          from  email.message import EmailMessage<br>
+                          from my_inputs import talk, take_command<br>
+                          from my_send_email import send_email<br>
+                          email_list={'shakyo':'officialshakyo@gmail.com', 'moumita': 'moumita.deb.choudhury@gmail.com'}<br>
+                          def get_email_info():<br>
+                              talk('to whom do you want to send the mail')<br>
+                              name=take_command()<br>
+                              receiver= email_list[name]<br>
+                              print(receiver)<br>
+                              talk("what is the subject of your email")<br>
+                              subject=take_command()<br>
+                              talk("tell me your message")<br>
+                              message=take_command()<br>
+                              send_email(receiver, subject, message)<br>
+                              talk("email sent")<br>
+                              if __name__==("__main__"):<br>
+                              get_email_info()<br>
+                          </p></div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">
+                          <i class="material-icons">receipt</i>
+                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>Automated news reporter - my_news.py</span></div>
+                        <div class="collapsible-body"><p>Are you looking for the latest news? Look no further! Our automated news teller provides you with all of the breaking stories, reviews and updates, so that you can stay up-to-date on your updates on day to day matters about the world. Don't miss out - follow us today to get access to this exclusive service! <br><br><br>
+                          Here's the code:
+                          <br>from my_inputs import talk
+                          <br>import requests
+                          <br>import time
+                          <br>def pynewsindia():
+                          <br>    main_url="https://newsapi.org/v2/top-headlines?country=in&apiKey=2f0834cfb909401a9cca0ce40cd389f2"
+                          <br>    open_google_page= requests.get(main_url).json()
+                          <br>    articles= open_google_page['articles']
+                          <br>    result=[]
+                          <br>    for a in articles:
+                          <br>        result.append(a["title"])
+                                                  <br>
+                          <br>    for i in range(10):
+                          <br>        time.sleep(5)
+                          <br>        Headline= i+1, result[i]
+                          <br>        print(Headline)
+                          <br>        talk(Headline)
+                          <br>if __name__==("__main__"):
+                          <br>    pynewsindia()
+                          
+                          </p></div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">
+                          <i class="material-icons">videogame_asset</i>
+                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>Rock Paper Scissors game in python!</span></div>
+                        <div class="collapsible-body"><p>Ready for a fun game? Let's play Rock Paper Scissors in python! It's an easy, classic way to settle disputes and have some fun. Who will be the winner? 
+                          <br><br><br>
+                          Here's the code:
+                          <br><br>
+                          <br>import random
+                          <br>def game():
+                          <br>    user = int(input("enter any of the follwing options: (1)Rock, (2)Paper, (3)Scissor: "))
+                          <br>    computer = random.randint(1,3)
+                          <br>    score = 0
+                          <br>    if computer == user:
+                          <br>        score = score
+                          <br>        print(f"draw match!{score}")
+                          <br>    elif computer == 1 and user == 2:
+                          <br>        score = score + 1
+                          <br>        print(f"you won and the score is: {score}")
+                          <br>    elif computer == 2 and user == 1:
+                          <br>        score = score
+                          <br>        print("computer has won!")
+                          <br>    elif computer == 2 and user == 3:
+                          <br>        score = score + 1
+                          <br>        print(f"you have won and the score is {score}")
+                          <br>    elif computer == 3 and user == 2:
+                          <br>        score = score
+                          <br>        print(f"computer has won!")
+                          <br>    elif computer == 1 and user == 3:
+                          <br>        score = score 
+                          <br>        print("computer has won!")
+                          <br>    elif computer == 3 and user  == 1:
+                          <br>        score = 1 + score
+                          <br>        print(f"you have won and the score is {score}")
+                          <br>    else:
+                          <br>        print("invalid input")
+                          <br>while True:
+                          <br>    game()
+                          </p></div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">
+                          <i class="material-icons">security</i>
+                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>Computer Vision Security using python!</span></div>
+                        <div class="collapsible-body"><p>Do you want to increase your home security? Look no further! With our new Python-based security camera system, you can monitor your property with ease. Keep an eye on who comes and goes - all from the comfort of your own couch!<br> The code for the python file is given below:<br><br>
+                          <br>import cv2
+                          <br>import winsound
+                          <br>cam = cv2.VideoCapture(0)
+                          <br>while cam.isOpened():
+                          <br>    ret, frame1 = cam.read()
+                          <br>    ret, frame2 = cam.read()
+                          <br>    diff = cv2.absdiff(frame1, frame2)
+                          <br>    gray = cv2.cvtColor(diff, cv2.COLOR_RGB2GRAY)
+                          <br>    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+                          <br>    _, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
+                          <br>    dilated = cv2.dilate(thresh, None, iterations=3)
+                          <br>    contours, _ = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+                          <br>    # cv2.drawContours(frame1, contours, -1, (0, 255, 0), 2)
+                          <br>    for c in contours:
+                          <br>        if cv2.contourArea(c) < 5000:
+                          <br>            continue
+                          <br>        x, y, w, h = cv2.boundingRect(c)
+                          <br>        cv2.rectangle(frame1, (x, y), (x+w, y+h), (0, 255, 0), 2)
+                          <br>        winsound.PlaySound('alert.wav', winsound.SND_ASYNC)
+                          <br>    if cv2.waitKey(10) == ord('q'):
+                          <br>        break
+                          <br>    cv2.imshow('Granny Cam', frame1)
+<
+
+                          </p></div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">
+                          <i class="material-icons">sentiment_satisfied</i>
+                          <span class="new badge"><i class = "small material-icons">keyboard_arrow_down</i>make a new file for your utility - "wish_me.py"</span></div>
+                        <div class="collapsible-body"><p>This file has got nothing much to offer other than greeting you with good morning and good afternoon or good evening messages!<br>
+                          The code of the python file is given below:
+                          <br><br>
+                          
+                          from my_inputs import talk
+                          import datetime
+                          from datetime import date
+                          def wishme():
+                              hour= int(datetime.datetime.now().hour)
+                              today= date.today()
+                              if hour>=0 and hour<12:
+                                  talk("good morning i am mars sir please tell me how can i help you")
+                                  talk(today)
+                              elif hour>=12 and hour<18:
+                                   talk("good afternoon i am mars sir please tell me how can i help you")
+                                   talk(today)
+                              else:
+                                   talk("good evening i am mars sir please tell me how can i help you")
+                                   talk(today)
+                          if __name__==("__main__"):
+                              wishme()
+                          </p></div>
+                      </li>
               </ul>
               
-
+<p>Thats it for making a DESKTOP ASSISTANT in python! See you in some other tutorial!
               <div class="carousel-wrapper">
                 <div class="t carousel">
                   <a class="carousel-item" href=""><iframe  src="https://www.youtube.com/embed/1be84u-4tog" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen crossOrigin="anonymous"></iframe></a>

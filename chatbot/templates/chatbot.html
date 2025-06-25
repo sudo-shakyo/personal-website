@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consumer Help Chatbot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body> 
+    <h1>chatbot</h1><br><br>
+    <div id="chatbot" class="box">
+        <div id="messages"></div>
+        <div id="input">
+            <form>
+                <div class="row">
+                    <div class="input-field col s6">
+                      <input type="text" id="query" name="query" class="validate">
+                      <label class="active" for="query">First Name</label>
+                    </div>
+                  </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+            </form>
+        </div>
+    </div>
+    <script>
+        $('#send').click(function(e) {
+            e.preventDefault();
+            var query = $('#query').val();
+            $('#messages').append('<div><strong>You:</strong> ' + query + '</div>');
+            $('#query').val('');
+            $.ajax({
+                url: '{% url "chatbot" %}',
+                type: 'POST',
+                data: {
+                    'query': query,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    $('#messages').append('<div><strong>Chatbot:</strong> ' + response.response + '</div>');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -15,16 +15,18 @@ Including another URLconf
 """
 from __future__ import annotations
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.contrib import admin
 from django.urls import path
 from blog import views
 from blog.views import announcements
+import app
 from django.contrib.auth import views as auth_views
 # from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf import settings
+from chatbot import views as chatbotviews
 #backend site
 admin.site.site_header = "CodeWithShakyo Admin"
 admin.site.site_title = "CodeWithShakyo Portal"
@@ -48,8 +50,10 @@ urlpatterns = [
     path('sitemap', views.sitemap, name='sitemap'), 
     path('personal_info/', views.personal_info, name='info'),
     path('jarvis', views.jarvis, name = 'jarvis'),
-    path('help', views.help, name = "help"),
-    # path('chatbot', views.bot, name = "chatbot")
+    path('oauth/', include('social_django.urls', namespace='social')),
+    path('chatbot', chatbotviews.chatbot, name='chatbot'),
+    path('testimonials', views.testimonials, name = 'testimonials'),
+    
     # url(r'^media/(?P<path>.*)$', serve,{'document_root':        settings.MEDIA_ROOT}), 
     # url(r'^static/(?P<path>.*)$', serve,{'document_root':   settings.STATIC_ROOT}), 
 ]
