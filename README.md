@@ -1,7 +1,7 @@
 # personal-website
 this was a website for my youtube channel
 
-Tutorial -
+link -
 
 # installing-modules 
 `pip install -r requirements.txt`
