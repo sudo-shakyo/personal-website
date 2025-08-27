@@ -1,7 +1,7 @@
 # Personal Website
 
 A personal website built with **Django**, combining static templates with other stuff like a chatbot.
-
+PS: This project has a lot of buggy code, not well commented code, please forgive me for that.
 ---
 
 ##  Overview
@@ -13,19 +13,20 @@ This repository contains a Django-based personal website featuring:
   An untrained Chatterbot works by saving your input text in its library. Every time you give chat with the chatterbot, it increases the accuracy of the response of the chatbot. Basically the program selects the closest matching response by searching for the closest matching known statement that matches the input, it then chooses a response from the selection of known responses to that statement.
   But in this project I have already trained the chatbot before hand using the the chatterbot module's inbuilt corpus data.
   This chatbot was primarily made to answer the queries of my viewers regarding my yt channel (discontinued).
+### Here is an example of how to train a the chatterbot
 ```python
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
-# Create a new trainer for the chatbot
+# creating a trainer for the chatbot
 trainer = ChatterBotCorpusTrainer(chatbot)
 
-# Train based on the english corpus
+# train the chatbot on the basis of english corpus data
 trainer.train("chatterbot.corpus.english")
 
-# Train based on english greetings corpus
+# train the chatbot for greetings from the corupus
 trainer.train("chatterbot.corpus.english.greetings")
 
-# Train based on the english conversations corpus
+# train for convos in english
 trainer.train("chatterbot.corpus.english.conversations")
 ```
 
