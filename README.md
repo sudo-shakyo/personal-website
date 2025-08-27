@@ -6,7 +6,7 @@ A personal website built with **Django**, combining static templates with other 
 ---
 
 ##  Overview
-PS: This project has a lot of buggy code, not well commented code, please forgive me for that.
+PS: This project has a lot of buggy code, not well commented code, please forgive me for that. (i made it years ago, just made minute changes in the past few days)
 
 This repository contains a Django-based personal website featuring:
 
