@@ -83,6 +83,7 @@ python manage.py runserver   # Visit http://127.0.0.1:8000
 
 
 ### Project Structure
+```
 /
 ├── blog/                     # Blog (contains functionalities and logic behind stuff like the contact form, announcements page, user auth, etc.
 ├── chatbot/                  # Chatbot made using the chatterbot module
@@ -98,7 +99,7 @@ python manage.py runserver   # Visit http://127.0.0.1:8000
 ├── vercel.json               # Deployment config for Vercel *didn't deply it yet
 ├── database*.sqlite3         # SQLite DB files (chatbot & contact page, user auth etc etc.)
 └── sentence_tokenizer.pickle # Tokenizer model for chatbot
-
+```
 ### Contributing to the project
 Any sort of contributions are welcome!
 
