@@ -83,7 +83,7 @@ python manage.py runserver   # Visit http://127.0.0.1:8000
 
 
 ### Project Structure
-
+/
 ├── blog/                     # Blog (contains functionalities and logic behind stuff like the contact form, announcements page, user auth, etc.
 ├── chatbot/                  # Chatbot made using the chatterbot module
 ├── codewithshakyo/           # Main App
