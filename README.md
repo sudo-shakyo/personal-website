@@ -40,10 +40,8 @@ trainer.train("chatterbot.corpus.english.conversations")
 | Web Framework          | Python Django            |
 | Templates               | HTML, Django templating |
 | Styling & Interactivity | CSS, Materialize,JavaScript|
-| Chatbot                 | `chatterbot` database is
-                          `database-chatterbot.sqlite3`|
-| Deployment Config      | `Procfile (for heroku)`, `vercel.json`, 
-                          `domain.pythonanywhere.com`|
+| Chatbot                 | `chatterbot` database`database-chatterbot.sqlite3`|
+| Deployment Config      | `Procfile (for heroku)`, `vercel.json`, `domain.pythonanywhere.com`|
 | Dependencies           | Listed in `requirements.txt` |
 | Runtime                | Python version specified in `runtime.txt` |
 
