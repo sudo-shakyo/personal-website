@@ -14,7 +14,7 @@ This repository contains a Django-based personal website featuring:
   But in this project I have already trained the chatbot before hand using the the chatterbot module's inbuilt corpus data.
   This chatbot was primarily made to answer the queries of my viewers regarding my yt channel (discontinued).
 ```python
-  from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.trainers import ChatterBotCorpusTrainer
 
 # Create a new trainer for the chatbot
 trainer = ChatterBotCorpusTrainer(chatbot)
@@ -41,8 +41,9 @@ trainer.train("chatterbot.corpus.english.conversations")
 | Templates               | HTML, Django templating |
 | Styling & Interactivity | CSS, Materialize,JavaScript|
 | Chatbot                 | `chatterbot` database is
-                          |`database-chatterbot.sqlite3`) |
-| Deployment Config      | `Procfile (for heroku)`, `vercel.json`, `domain.pythonanywhere.com`|
+                          `database-chatterbot.sqlite3`|
+| Deployment Config      | `Procfile (for heroku)`, `vercel.json`, 
+                          `domain.pythonanywhere.com`|
 | Dependencies           | Listed in `requirements.txt` |
 | Runtime                | Python version specified in `runtime.txt` |
 
@@ -84,7 +85,7 @@ python manage.py runserver   # Visit http://127.0.0.1:8000
 
 
 ### Project Structure
-/
+
 ├── blog/                     # Blog (contains functionalities and logic behind stuff like the contact form, announcements page, user auth, etc.
 ├── chatbot/                  # Chatbot made using the chatterbot module
 ├── codewithshakyo/           # Main App
